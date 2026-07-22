@@ -2,30 +2,18 @@
 // Guest Syndicate — landing page interactions
 // ============================================
 
-// ----- CONFIG -----
-// Option A (easiest): paste your Formspree form ID below
-//   e.g. const FORMSPREE_ID = 'xyzabc123';
-//   Then deploy. Done.
-const FORMSPREE_ID = 'xvzeqyqd';
-
-// Option B (Vercel env var): leave FORMSPREE_ID as 'YOUR_FORMSPREE_ID' above
-//   and set window.FORMSPREE_ID in a small inline <script> in index.html,
-//   OR inject via your build. The code below uses FORMSPREE_ID first,
-//   then falls back to window.FORMSPREE_ID, then to the data attribute.
+// Form posts to /api/submit, which is a Vercel serverless function
+// that reads FORMSPREE_ID from your Vercel environment variables
+// and forwards the submission to Formspree. Your ID never enters git.
+//
+// To configure:
+//   1. In Vercel → Project → Settings → Environment Variables
+//   2. Add: FORMSPREE_ID = your_form_id_from_formspree_io
+//   3. Make sure api/submit.js is deployed
+//   4. Redeploy
 // ============================================
 
-function getFormspreeEndpoint() {
-  const id =
-    (FORMSPREE_ID && FORMSPREE_ID !== 'YOUR_FORMSPREE_ID' && FORMSPREE_ID) ||
-    (typeof window !== 'undefined' && window.FORMSPREE_ID) ||
-    document.getElementById('applicationForm')?.dataset.formspreeId ||
-    'YOUR_FORMSPREE_ID';
-
-  if (!id || id === 'YOUR_FORMSPREE_ID') {
-    return null; // not configured yet
-  }
-  return `https://formspree.io/f/${id}`;
-}
+const SUBMIT_ENDPOINT = '/api/submit';
 
 // ----- Form submission -----
 async function handleSubmit(e) {
@@ -42,7 +30,7 @@ async function handleSubmit(e) {
   // Honeypot for spam (Formspree convention: field named _gotcha)
   // If you want to add a hidden honeypot, give the form a _gotcha input.
 
-  const endpoint = getFormspreeEndpoint();
+  const endpoint = SUBMIT_ENDPOINT;
 
   // UI: loading
   submitBtn.disabled = true;
@@ -51,22 +39,6 @@ async function handleSubmit(e) {
   status.className = 'form-status';
 
   try {
-    if (!endpoint) {
-      // No Formspree configured yet — show a friendly warning + console log
-      console.warn(
-        '[Guest Syndicate] No Formspree endpoint configured. ' +
-        'Edit FORMSPREE_ID in app.js (or set window.FORMSPREE_ID). ' +
-        'Captured submission:',
-        data
-      );
-      status.textContent =
-        'Form not wired up yet — check app.js for the Formspree setup. Your data is logged to the console.';
-      status.classList.add('form-status--warn');
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = 'Submit application <span class="btn-arrow">→</span>';
-      return;
-    }
-
     const res = await fetch(endpoint, {
       method: 'POST',
       headers: {
@@ -76,7 +48,9 @@ async function handleSubmit(e) {
       body: JSON.stringify(data),
     });
 
-    if (res.ok) {
+    const body = await res.json().catch(() => ({}));
+
+    if (res.ok && body.ok !== false) {
       form.style.display = 'none';
       success.classList.add('show');
       if (name) {
@@ -85,8 +59,7 @@ async function handleSubmit(e) {
       success.scrollIntoView({ behavior: 'smooth', block: 'center' });
       decrementCounter();
     } else {
-      const body = await res.json().catch(() => ({}));
-      const msg = body?.error || `Formspree returned ${res.status}.`;
+      const msg = body?.error || `Server returned ${res.status}.`;
       throw new Error(msg);
     }
   } catch (err) {

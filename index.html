@@ -334,29 +334,14 @@
 
       <!--
         ============================================
-        FORMSPREE SETUP
-        ============================================
-        Option A — Direct endpoint (simplest):
-          1. Sign up at https://formspree.io
-          2. Create a new form, copy the form ID (looks like "xyzabc123")
-          3. Replace FORMSPREE_ID below with your ID
-             The action becomes: https://formspree.io/f/xyzabc123
-          4. Done. Submissions will email you.
-
-        Option B — Environment variable (Vercel):
-          1. Sign up at formspree.io and create a form
-          2. Get your form ID
-          3. In your Vercel project: Settings → Environment Variables
-             Add: FORMSPREE_ENDPOINT = https://formspree.io/f/xyzabc123
-          4. Leave FORMSPREE_ID as 'YOUR_FORMSPREE_ID' here —
-             the form action below falls back to window.location + querystring,
-             or you can wire it up in app.js (see the CONFIG section there)
+        Form posts to /api/submit — a Vercel serverless function
+        that reads your Formspree ID from environment variables.
+        No form ID in this file. See api/submit.js + README.md.
         ============================================
       -->
       <form
         class="apply-form"
         id="applicationForm"
-        data-formspree-id="YOUR_FORMSPREE_ID"
         onsubmit="handleSubmit(event)"
       >
         <div class="field">
