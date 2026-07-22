@@ -29,10 +29,10 @@
 </head>
 <body>
 
-<!-- Skip to main content (accessibility) -->
+<!-- Skip to main content -->
 <a href="#main" class="skip-link">Skip to main content</a>
 
-<!-- Decorative ambient blobs -->
+<!-- Ambient blobs -->
 <div class="ambient" aria-hidden="true">
   <div class="blob blob-peach"></div>
   <div class="blob blob-sage"></div>
@@ -42,9 +42,9 @@
 <!-- Paper texture overlay -->
 <div class="paper-texture" aria-hidden="true"></div>
 
-<!-- Navigation: wide bar → collapses to slim pill on scroll -->
+<!-- Navigation -->
 <header class="nav" id="nav" role="banner">
-  <div class="nav-bar" id="navBar">
+  <div class="nav-inner" id="navInner">
     <a href="#" class="logo">
       <span class="logo-text">Guest Syndicate</span>
     </a>
@@ -59,7 +59,6 @@
       <span></span><span></span><span></span>
     </button>
   </div>
-  <!-- Mobile menu drawer -->
   <div class="nav-drawer" id="navDrawer" role="navigation" aria-label="Mobile navigation">
     <a href="#how">How it works</a>
     <a href="#approach">Our approach</a>
@@ -69,10 +68,9 @@
   </div>
 </header>
 
-<!-- Main content landmark -->
 <main id="main">
 
-<!-- Hero — fits viewport on desktop -->
+<!-- Hero -->
 <section class="hero" id="hero" aria-label="Introduction">
   <div class="container">
     <div class="hero-grid">
@@ -82,12 +80,10 @@
           <span class="display-italic">We help you get through the door.</span>
         </h1>
         <p class="lede">
-          A boutique representation service for high-leverage founders, operators, and strategists. We don't spam podcast hosts. We advocate for your expertise, the way a talent agent manages an executive.
+          A boutique representation service for high-leverage founders, operators, and strategists. We advocate for your expertise, the way a talent agent manages an executive.
         </p>
         <div class="hero-cta">
-          <a href="#apply" class="btn btn-primary">Apply for a seat on the Roster
-            <span class="btn-arrow">→</span>
-          </a>
+          <a href="#apply" class="btn btn-primary">Apply for a seat on the Roster</a>
           <a href="#how" class="btn btn-text">See how it works</a>
         </div>
         <div class="hero-meta">
@@ -134,7 +130,7 @@
   </div>
 </section>
 
-<!-- Logo strip / social proof -->
+<!-- Logo marquee -->
 <section class="logos" aria-label="Podcast rooms">
   <div class="container">
     <p class="logos-label">Members get introduced to rooms like</p>
@@ -172,7 +168,7 @@
   </div>
 </section>
 
-<!-- What we are building — dotted grid background -->
+<!-- Manifesto -->
 <section class="manifesto" id="manifesto" aria-label="What we are building">
   <div class="container">
     <div class="manifesto-grid">
@@ -192,21 +188,21 @@
             <span class="list-num">01</span>
             <div>
               <strong>Curated Matchmaking</strong>
-              <p>We do not look at vanity metrics or subscriber counts. We find the specific shows where your future clients, partners, and peers spend their time.</p>
+              <p>We find the specific shows where your future clients, partners, and peers spend their time.</p>
             </div>
           </li>
           <li>
             <span class="list-num">02</span>
             <div>
               <strong>Hand-Crafted Outreach</strong>
-              <p>Every pitch is written specifically for the host, referencing their actual opinions and recent episodes. No templates, no mass broadcasts.</p>
+              <p>Every pitch is written specifically for the host, referencing their actual opinions and recent episodes.</p>
             </div>
           </li>
           <li>
             <span class="list-num">03</span>
             <div>
               <strong>Complete Concierge Management</strong>
-              <p>From initial host contact to scheduling and pre-interview briefs, we handle the entire process. You just show up and speak.</p>
+              <p>From initial host contact to scheduling and pre-interview briefs, we handle the entire process.</p>
             </div>
           </li>
         </ul>
@@ -215,7 +211,7 @@
   </div>
 </section>
 
-<!-- Validation in progress — warm peach-cream background -->
+<!-- In progress -->
 <section class="in-progress" id="in-progress" aria-label="Validation in progress">
   <div class="container">
     <div class="in-progress-card">
@@ -226,7 +222,7 @@
           We believe in testing systems manually before scaling them. Right now, we are running a hands-on concierge cohort where every outreach strategy, host background check, and pitch is managed directly by a human agent.
         </p>
         <p class="lede small">
-          Our first Founding Member is an automation strategist working with fast-growing agencies. In our earliest work together, we put her in front of one of the top shows in her ecosystem. The host is now reviewing for a possible booking. That is the standard we are building toward, and the standard our roster is measured on.
+          Our first Founding Member is an automation strategist working with fast-growing agencies. In our earliest work together, we put her in front of one of the top shows in her ecosystem. The host is now reviewing for a possible booking.
         </p>
       </div>
       <div class="in-progress-right">
@@ -254,14 +250,14 @@
   </div>
 </section>
 
-<!-- Paper tear divider -->
+<!-- Paper tear -->
 <div class="paper-tear" aria-hidden="true">
   <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,20 C120,8 240,32 360,16 C480,28 600,4 720,22 C840,8 960,30 1080,14 C1200,26 1320,6 1440,20 L1440,40 L0,40 Z" fill="var(--bg-sage)"/>
   </svg>
 </div>
 
-<!-- How it works — warm cream background -->
+<!-- How it works -->
 <section class="how" id="how" aria-label="How it works">
   <div class="container">
     <div class="section-head">
@@ -272,28 +268,28 @@
       <div class="step">
         <div class="step-num">01</div>
         <h3>Position</h3>
-        <p>We codify your expertise, the conversations only you can lead, and the audiences that convert into your world. No cookie-cutter media kit.</p>
+        <p>We codify your expertise, the conversations only you can lead, and the audiences that convert into your world.</p>
       </div>
       <div class="step">
         <div class="step-num">02</div>
         <h3>Source</h3>
-        <p>We maintain a curated, vetted map of podcasts, rooms, and shows where your point of view actually moves people. Not a 10,000-name list.</p>
+        <p>We maintain a curated, vetted map of podcasts and rooms where your point of view actually moves people.</p>
       </div>
       <div class="step">
         <div class="step-num">03</div>
         <h3>Pitch</h3>
-        <p>Hand-written outreach, one host at a time. Research, drafting, follow-up, scheduling. We handle the friction; you handle the conversation.</p>
+        <p>Hand-written outreach, one host at a time. Research, drafting, follow-up, scheduling. We handle the friction.</p>
       </div>
       <div class="step">
         <div class="step-num">04</div>
         <h3>Compound</h3>
-        <p>Every appearance feeds the next. We track what resonates, refine the angle, and turn one good interview into twelve.</p>
+        <p>Every appearance feeds the next. We track what resonates, refine the angle, and turn one interview into twelve.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Vision — soft warm brown -->
+<!-- Vision -->
 <section class="vision" id="approach" aria-label="Our vision">
   <div class="container">
     <div class="vision-card">
@@ -316,19 +312,19 @@
           <p>Cold email software that floods inboxes, burns your reputation, and treats hosts like targets instead of people.</p>
         </div>
       </div>
-      <p class="vision-footer">Our goal is to build a streamlined talent platform that gives serious operators consistent, earned access to the top stages in their industry, without the overhead of an agency or the mess of cold email software.</p>
+      <p class="vision-footer">Our goal is to build a streamlined talent platform that gives serious operators consistent, earned access to the top stages in their industry.</p>
     </div>
   </div>
 </section>
 
-<!-- Paper tear divider -->
+<!-- Paper tear -->
 <div class="paper-tear paper-tear--flip" aria-hidden="true">
   <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,20 C180,34 360,6 540,22 C720,8 900,30 1080,14 C1200,28 1320,8 1440,20 L1440,0 L0,0 Z" fill="var(--bg-cream)"/>
   </svg>
 </div>
 
-<!-- Who it's for — sage green background -->
+<!-- Who it's for -->
 <section class="who" id="who" aria-label="Who this is for">
   <div class="container">
     <div class="who-wrap">
@@ -366,14 +362,14 @@
   </div>
 </section>
 
-<!-- Paper tear divider -->
+<!-- Paper tear -->
 <div class="paper-tear" aria-hidden="true">
   <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,18 C160,30 320,6 480,24 C640,10 800,28 960,12 C1120,26 1280,4 1440,18 L1440,40 L0,40 Z" fill="var(--bg)"/>
   </svg>
 </div>
 
-<!-- Founding Roster — warm cream with subtle grid -->
+<!-- Founding Roster -->
 <section class="founding" id="roster" aria-label="Founding Roster">
   <div class="container">
     <div class="founding-card">
@@ -399,7 +395,6 @@
           </div>
         </div>
       </div>
-
       <div class="founding-grid">
         <div class="perk">
           <div class="perk-icon">★</div>
@@ -407,7 +402,7 @@
           <p>$199/mo, guaranteed. As our roster grows, your rate stays put.</p>
         </div>
         <div class="perk">
-          <div class="perk-icon">→</div>
+          <div class="perk-icon">✦</div>
           <h4>Direct line to the team</h4>
           <p>Not a ticket queue. The people running your placements are in your DMs.</p>
         </div>
@@ -424,13 +419,11 @@
       </div>
     </div>
   </div>
-
-  <!-- Roster full state (hidden by default, shown when seats = 0) -->
   <div class="roster-full" id="rosterFull" style="display:none;">
     <div class="roster-full-card">
       <div class="roster-full-icon">◆</div>
       <h3>The Founding Roster is now full.</h3>
-      <p>All 10 seats have been claimed. The $199/mo rate is locked for these members forever. We may reopen at a higher tier in the future — leave your email to be the first to know.</p>
+      <p>All 10 seats have been claimed. We may reopen at a higher tier in the future — leave your email to be the first to know.</p>
       <div class="roster-full-form">
         <input type="email" id="waitlistEmail" placeholder="you@company.com" aria-label="Email for waitlist" />
         <button class="btn btn-primary btn-sm" id="waitlistBtn">Join the waitlist</button>
@@ -439,7 +432,7 @@
   </div>
 </section>
 
-<!-- Application / Apply — warm cream with dotted grid -->
+<!-- Apply -->
 <section class="apply" id="apply" aria-label="Apply for a seat">
   <div class="container">
     <div class="apply-wrap">
@@ -473,28 +466,18 @@
           </div>
         </div>
       </div>
-
-      <form
-        class="apply-form"
-        id="applicationForm"
-        onsubmit="handleSubmit(event)"
-        novalidate
-      >
-        <!-- Honeypot field (hidden from humans, spam bots fill it) -->
+      <form class="apply-form" id="applicationForm" onsubmit="handleSubmit(event)" novalidate>
         <div class="honeypot-field" aria-hidden="true">
           <label for="gotcha">Leave this empty</label>
           <input type="text" id="gotcha" name="_gotcha" tabindex="-1" autocomplete="off" />
         </div>
-
         <div class="field">
           <label for="name">Your name</label>
-          <input type="text" id="name" name="name" required placeholder="First and last" maxlength="100" aria-describedby="name-hint" />
-          <span class="field-hint" id="name-hint">As you'd introduce yourself</span>
+          <input type="text" id="name" name="name" required placeholder="First and last" maxlength="100" />
         </div>
         <div class="field">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="you@company.com" maxlength="120" aria-describedby="email-hint" />
-          <span class="field-hint" id="email-hint">We reply within 72 hours</span>
+          <input type="email" id="email" name="email" required placeholder="you@company.com" maxlength="120" />
         </div>
         <div class="field">
           <label for="business">What do you do? <span class="muted">one line</span></label>
@@ -502,31 +485,26 @@
         </div>
         <div class="field">
           <label for="rooms">Which rooms are you trying to get into? <span class="muted">be specific</span></label>
-          <textarea id="rooms" name="rooms" rows="3" required placeholder="Smart Agency Masterclass, The Operators Room, anything with operators at $1M+" maxlength="500" aria-describedby="rooms-hint"></textarea>
-          <span class="field-hint" id="rooms-hint">Specific shows, communities, or stages</span>
+          <textarea id="rooms" name="rooms" rows="3" required placeholder="Smart Agency Masterclass, The Operators Room, anything with operators at $1M+" maxlength="500"></textarea>
         </div>
         <div class="field">
           <label for="why">Why now, and why us?</label>
           <textarea id="why" name="why" rows="3" required placeholder="A few honest sentences. We're looking for fit, not polish." maxlength="800"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
-          Submit application
-          <span class="btn-arrow">→</span>
-        </button>
+        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Submit application</button>
         <p class="form-fine">By applying, you agree to be contacted by the Guest Syndicate team. We don't share your information with anyone.</p>
         <p class="form-status" id="formStatus" aria-live="polite"></p>
       </form>
-
       <div class="apply-success" id="applySuccess" role="alert">
         <div class="success-mark">✓</div>
         <h3>Application received.</h3>
-        <p>We'll be in touch within 72 hours. Watch your inbox, including the "less primary" tabs.</p>
+        <p>We'll be in touch within 72 hours. Watch your inbox, including the less primary tabs.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ — dotted grid background -->
+<!-- FAQ -->
 <section class="faq" id="faq" aria-label="Common questions">
   <div class="container">
     <div class="section-head">
@@ -536,42 +514,40 @@
     <div class="faq-list">
       <details class="faq-item" open>
         <summary>Why only 10 founding members?</summary>
-        <p>Because boutique means boutique. We'd rather serve ten operators exceptionally well than fifty adequately. After the cohort closes, pricing moves to standard and the door reopens at a different shape.</p>
+        <p>Because boutique means boutique. We'd rather serve ten operators exceptionally well than fifty adequately.</p>
       </details>
       <details class="faq-item">
         <summary>What does $199/month actually get me?</summary>
-        <p>A full podcast and rooms representation service: positioning, sourcing, hand-crafted outreach, scheduling, prep docs, and follow-up. You show up, you be brilliant. Everything around the appearance is ours to handle.</p>
+        <p>A full podcast and rooms representation service: positioning, sourcing, hand-crafted outreach, scheduling, prep docs, and follow-up.</p>
       </details>
       <details class="faq-item">
         <summary>What happens after the founding cohort fills?</summary>
-        <p>Existing members keep their $199 rate forever. New members, when we re-open, come in at the then-current rate, which will be higher. The lock-in is the point.</p>
+        <p>Existing members keep their $199 rate forever. New members come in at the then-current rate, which will be higher.</p>
       </details>
       <details class="faq-item">
         <summary>What if I'm rejected?</summary>
-        <p>You hear back either way, usually within 72 hours. If we're not the right fit right now, we'll tell you why. Most rejections are timing, not quality.</p>
+        <p>You hear back either way, usually within 72 hours. Most rejections are timing, not quality.</p>
       </details>
       <details class="faq-item">
         <summary>Is this a lead-gen agency?</summary>
-        <p>No. We're not selling you leads, SEO, or growth-hack funnels. We're placing you in rooms where your expertise compounds. Different service, different outcomes.</p>
+        <p>No. We're placing you in rooms where your expertise compounds. Different service, different outcomes.</p>
       </details>
       <details class="faq-item">
         <summary>Can I cancel anytime?</summary>
-        <p>Yes. Month to month, no contract. The rate lock is a promise on our end, not a leash on yours. Most members stay because it works, not because they have to.</p>
+        <p>Yes. Month to month, no contract. Most members stay because it works, not because they have to.</p>
       </details>
     </div>
   </div>
 </section>
 
-<!-- Final CTA — soft warm brown -->
+<!-- Final CTA -->
 <section class="final-cta" aria-label="Final call to action">
   <div class="container">
     <div class="final-inner">
       <h2 class="h2 center">9 seats left. <span class="italic">The next one could be yours.</span></h2>
       <p class="center lede small">Five short fields. 72 hours. Then a decision.</p>
       <div class="center">
-        <a href="#apply" class="btn btn-primary">Apply for a seat on the Roster
-          <span class="btn-arrow">→</span>
-        </a>
+        <a href="#apply" class="btn btn-primary">Apply for a seat on the Roster</a>
       </div>
     </div>
   </div>
@@ -579,13 +555,10 @@
 
 </main>
 
-<!-- Footer -->
 <footer class="footer" role="contentinfo">
   <div class="container footer-inner">
     <div class="footer-left">
-      <a href="#" class="logo logo--footer">
-        <span class="logo-text">Guest Syndicate</span>
-      </a>
+      <a href="#" class="logo logo--footer"><span class="logo-text">Guest Syndicate</span></a>
       <p class="muted small">You belong in bigger rooms.</p>
     </div>
     <div class="footer-links">

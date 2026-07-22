@@ -53,7 +53,7 @@ if (isRosterFull()) {
 // ----- Nav: scroll collapse + mobile drawer -----
 
 const nav = document.getElementById('nav');
-const navBar = document.getElementById('navBar');
+const navInner = document.getElementById('navInner');
 const navToggle = document.getElementById('navToggle');
 const navDrawer = document.getElementById('navDrawer');
 
