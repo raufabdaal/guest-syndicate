@@ -23,9 +23,9 @@
 <!-- Paper texture overlay (subtle, on top of blobs) -->
 <div class="paper-texture" aria-hidden="true"></div>
 
-<!-- Navigation: starts as wide bar, collapses to glass pill on scroll -->
+<!-- Navigation: collapses to floating glass pill on scroll -->
 <header class="nav" id="nav">
-  <div class="nav-bar">
+  <div class="nav-pill">
     <a href="#" class="logo">
       <span class="logo-text">Guest Syndicate</span>
     </a>
@@ -35,25 +35,30 @@
       <a href="#roster">Founding Roster</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a href="#apply" class="btn btn-primary btn-sm nav-cta">Apply for a seat</a>
+    <a href="#apply" class="btn btn-ghost btn-sm nav-cta">Apply for a seat</a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
+  <!-- Mobile menu drawer -->
   <div class="nav-drawer" id="navDrawer">
     <a href="#how">How it works</a>
     <a href="#approach">Our approach</a>
     <a href="#roster">Founding Roster</a>
     <a href="#faq">FAQ</a>
-    <a href="#apply" class="btn btn-primary btn-block">Apply for a seat</a>
+    <a href="#apply" class="btn btn-primary">Apply for a seat</a>
   </div>
 </header>
 
-<!-- Hero — fits in viewport on desktop -->
+<!-- Hero -->
 <section class="hero">
   <div class="container">
     <div class="hero-grid">
       <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Now accepting 9 Founding Members
+        </div>
         <h1 class="display">
           You belong in bigger rooms.
           <span class="display-italic">We help you get through the door.</span>
@@ -90,14 +95,14 @@
           <div class="floating-card card-1">
             <div class="card-label">New pitch</div>
             <div class="card-title">The Operators Room</div>
-            <div class="card-meta">Host briefing, 8 fit signals</div>
+            <div class="card-meta">Host briefing · 8 fit signals</div>
             <div class="card-tag">Hand-crafted</div>
           </div>
           <div class="floating-card card-2">
             <div class="card-label">In review</div>
-            <div class="card-title">Tier-1 podcast</div>
-            <div class="card-meta">Pilot client, advancing</div>
-            <div class="card-tag">Top 1%</div>
+            <div class="card-title">Smart Agency Masterclass</div>
+            <div class="card-meta">Pilot client · advancing</div>
+            <div class="card-tag">Tier-1 podcast</div>
           </div>
           <div class="floating-card card-3">
             <div class="card-label">Scheduled</div>
@@ -149,13 +154,13 @@
   </div>
 </section>
 
-<!-- What we are building — DOTTED GRID BACKGROUND -->
+<!-- What we are building (replaces the inflated proof section) -->
 <section class="manifesto">
   <div class="container">
     <div class="manifesto-grid">
       <div class="manifesto-side">
         <p class="kicker">What we are building</p>
-        <h2 class="h2">Most podcast outreach is broken. <span class="italic">We are rebuilding it, manually, for the people it should have worked for all along.</span></h2>
+        <h2 class="h2">Most podcast outreach is broken. <span class="italic">We're rebuilding it, manually, for the people it should have worked for all along.</span></h2>
       </div>
       <div class="manifesto-body">
         <p class="lede">
@@ -192,13 +197,13 @@
   </div>
 </section>
 
-<!-- Validation in progress — PEACH WARM BACKGROUND -->
+<!-- Validation in progress (replaces proof-of-work) -->
 <section class="in-progress">
   <div class="container">
     <div class="in-progress-card">
       <div class="in-progress-left">
         <p class="kicker">Validation in progress</p>
-        <h2 class="h2">We are building this <span class="italic">with our first members, not in front of them.</span></h2>
+        <h2 class="h2">We're building this <span class="italic">with our first members, not in front of them.</span></h2>
         <p class="lede small">
           We believe in testing systems manually before scaling them. Right now, we are running a hands-on concierge cohort where every outreach strategy, host background check, and pitch is managed directly by a human agent.
         </p>
@@ -231,7 +236,7 @@
   </div>
 </section>
 
-<!-- How it works — soft cream with vertical hairlines -->
+<!-- How it works (Greenroom Experience renamed) -->
 <section class="how" id="how">
   <div class="container">
     <div class="section-head">
@@ -263,7 +268,7 @@
   </div>
 </section>
 
-<!-- Vision — soft warm deep brown instead of black -->
+<!-- Vision / positioning -->
 <section class="vision" id="approach">
   <div class="container">
     <div class="vision-card">
@@ -272,17 +277,17 @@
       <div class="vision-grid">
         <div class="vision-block">
           <div class="vision-tag">The agency</div>
-          <h4>$5,000<span>/mo</span></h4>
+          <h4>$5,000/month</h4>
           <p>Slow results, vague promises, and retainer lock-ins that punish you for outgrowing the service.</p>
         </div>
         <div class="vision-block vision-block--us">
           <div class="vision-tag vision-tag--us">Guest Syndicate</div>
-          <h4>$199<span>/mo</span></h4>
+          <h4>$199/month</h4>
           <p>Concierge representation, hand-crafted pitches, and a roster small enough to actually care about your outcomes.</p>
         </div>
         <div class="vision-block">
           <div class="vision-tag">The tool</div>
-          <h4>$99<span>/mo</span></h4>
+          <h4>$99/month</h4>
           <p>Cold email software that floods inboxes, burns your reputation, and treats hosts like targets instead of people.</p>
         </div>
       </div>
@@ -291,7 +296,7 @@
   </div>
 </section>
 
-<!-- Who it's for — SAGE with paper tear edge above -->
+<!-- Who it's for -->
 <section class="who">
   <div class="container">
     <div class="who-wrap">
@@ -329,7 +334,7 @@
   </div>
 </section>
 
-<!-- Founding Roster — soft warm cream with peach -->
+<!-- Founding Roster -->
 <section class="founding" id="roster">
   <div class="container">
     <div class="founding-card">
@@ -351,7 +356,7 @@
             <div class="counter-bar">
               <div class="counter-fill" style="width: 10%;"></div>
             </div>
-            <div class="counter-note">1 onboarded, 9 seats remaining</div>
+            <div class="counter-note">1 onboarded · 9 seats remaining</div>
           </div>
         </div>
       </div>
@@ -382,7 +387,7 @@
   </div>
 </section>
 
-<!-- Application / Apply — soft cream -->
+<!-- Application / Apply -->
 <section class="apply" id="apply">
   <div class="container">
     <div class="apply-wrap">
@@ -459,7 +464,7 @@
   </div>
 </section>
 
-<!-- FAQ — dotted grid background -->
+<!-- FAQ -->
 <section class="faq" id="faq">
   <div class="container">
     <div class="section-head">
@@ -495,7 +500,7 @@
   </div>
 </section>
 
-<!-- Final CTA — warm deep brown, no aggressive black -->
+<!-- Final CTA -->
 <section class="final-cta">
   <div class="container">
     <div class="final-inner">
@@ -514,7 +519,7 @@
 <footer class="footer">
   <div class="container footer-inner">
     <div class="footer-left">
-      <a href="#" class="logo">
+      <a href="#" class="logo logo--footer">
         <span class="logo-text">Guest Syndicate</span>
       </a>
       <p class="muted small">You belong in bigger rooms.</p>
