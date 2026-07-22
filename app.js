@@ -6,7 +6,7 @@
 // Option A (easiest): paste your Formspree form ID below
 //   e.g. const FORMSPREE_ID = 'xyzabc123';
 //   Then deploy. Done.
-const FORMSPREE_ID = 'https://formspree.io/f/xvzeqyqd';
+const FORMSPREE_ID = 'xvzeqyqd';
 
 // Option B (Vercel env var): leave FORMSPREE_ID as 'YOUR_FORMSPREE_ID' above
 //   and set window.FORMSPREE_ID in a small inline <script> in index.html,
