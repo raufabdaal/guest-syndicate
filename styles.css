@@ -135,20 +135,19 @@ button { font-family: inherit; cursor: pointer; }
   width: 100%; max-width: var(--maxw);
   justify-content: space-between;
 }
-/* Scrolled → slim pill */
+/* Scrolled → slim pill (logo + CTA only, links fade out) */
 .nav.scrolled { padding: 12px var(--pad); }
 .nav.scrolled .nav-inner {
   background: rgba(255,255,255,0.85);
   border-color: var(--line-strong);
   border-radius: 999px;
-  padding: 10px 20px;
+  padding: 10px 24px;
   box-shadow: 0 4px 20px rgba(31,26,20,0.08);
-  max-width: 580px; width: auto;
-  gap: 16px;
+  max-width: 440px; width: auto;
 }
 .nav.scrolled .logo { font-size: 15px; }
-.nav.scrolled .nav-links { gap: 18px; }
-.nav.scrolled .nav-links a { font-size: 13px; }
+.nav.scrolled .nav-links { display: none; }
+.nav.scrolled .nav-cta { font-size: 13px; padding: 8px 16px; }
 
 .logo { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-serif); font-size: 17px; font-weight: 500; color: var(--ink); letter-spacing: -0.01em; flex-shrink: 0; }
 .logo-text { white-space: nowrap; }
@@ -184,7 +183,7 @@ button { font-family: inherit; cursor: pointer; }
 .hero {
   min-height: 100vh; min-height: 100dvh;
   display: flex; align-items: center;
-  padding: 0;
+  padding: 110px 0 40px;
   position: relative;
 }
 .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: center; }
