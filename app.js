@@ -1,16 +1,10 @@
 // ============================================
-// Guest Syndicate — landing page interactions
+// Guest Syndicate landing page interactions
 // ============================================
 
 // Form posts to /api/submit, which is a Vercel serverless function
 // that reads FORMSPREE_ID from your Vercel environment variables
 // and forwards the submission to Formspree. Your ID never enters git.
-//
-// To configure:
-//   1. In Vercel → Project → Settings → Environment Variables
-//   2. Add: FORMSPREE_ID = your_form_id_from_formspree_io
-//   3. Make sure api/submit.js is deployed
-//   4. Redeploy
 // ============================================
 
 const SUBMIT_ENDPOINT = '/api/submit';
@@ -24,15 +18,9 @@ async function handleSubmit(e) {
   const status = document.getElementById('formStatus');
   const name = document.getElementById('name').value.trim();
 
-  // Build submission payload
   const data = Object.fromEntries(new FormData(form).entries());
-
-  // Honeypot for spam (Formspree convention: field named _gotcha)
-  // If you want to add a hidden honeypot, give the form a _gotcha input.
-
   const endpoint = SUBMIT_ENDPOINT;
 
-  // UI: loading
   submitBtn.disabled = true;
   submitBtn.innerHTML = 'Sending…';
   status.textContent = '';
@@ -71,7 +59,7 @@ async function handleSubmit(e) {
   }
 }
 
-// ----- Counter decrement (UI only — the source of truth is your form backend) -----
+// ----- Counter decrement -----
 function decrementCounter() {
   const el = document.getElementById('spotsRemaining');
   const fill = document.querySelector('.counter-fill');
@@ -84,10 +72,51 @@ function decrementCounter() {
     const pct = (taken / 10) * 100;
     fill.style.width = pct + '%';
     if (next <= 3) {
-      note.textContent = `Only ${next} seats left — closing soon`;
+      note.textContent = `Only ${next} seats left. Closing soon.`;
       note.style.color = 'var(--peach-deep)';
     }
   }
+}
+
+// ----- Nav: scroll state + mobile drawer -----
+const nav = document.getElementById('nav');
+const navToggle = document.getElementById('navToggle');
+const navDrawer = document.getElementById('navDrawer');
+
+function updateNav() {
+  if (window.scrollY > 20) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+}
+window.addEventListener('scroll', updateNav, { passive: true });
+updateNav();
+
+if (navToggle && navDrawer) {
+  navToggle.addEventListener('click', () => {
+    const open = navDrawer.classList.toggle('open');
+    navToggle.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', open);
+  });
+
+  // Close drawer when a link is clicked
+  navDrawer.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navDrawer.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Close drawer on outside click
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && navDrawer.classList.contains('open')) {
+      navDrawer.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
 }
 
 // ----- Scroll reveal -----
@@ -103,22 +132,9 @@ const observer = new IntersectionObserver(
   { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
 );
 
-document.querySelectorAll('.promise-card, .step, .perk, .faq-item, .assurance-item, .greenroom-card').forEach((el) => {
+document.querySelectorAll('.promise-card, .step, .perk, .faq-item, .assurance-item, .greenroom-card, .manifesto-list li, .who-stat').forEach((el) => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(20px)';
   el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
   observer.observe(el);
 });
-
-// ----- Subtle nav blur on scroll -----
-const nav = document.querySelector('.nav');
-window.addEventListener(
-  'scroll',
-  () => {
-    const current = window.scrollY;
-    nav.style.background = current > 20
-      ? 'rgba(251, 247, 242, 0.85)'
-      : 'rgba(251, 247, 242, 0.7)';
-  },
-  { passive: true }
-);
