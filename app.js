@@ -50,7 +50,7 @@ if (isRosterFull()) {
   showRosterFull();
 }
 
-// ----- Nav: scroll collapse + mobile drawer -----
+// ----- Nav: persistent bar + mobile drawer -----
 
 const nav = document.getElementById('nav');
 const navInner = document.getElementById('navInner');
@@ -63,15 +63,7 @@ overlay.className = 'nav-overlay';
 overlay.id = 'navOverlay';
 nav.after(overlay);
 
-function updateNav() {
-  if (window.scrollY > 40) {
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.remove('scrolled');
-  }
-}
-window.addEventListener('scroll', updateNav, { passive: true });
-updateNav();
+// Nav stays persistent — no scroll collapse
 
 function openDrawer() {
   navDrawer.classList.add('open');
